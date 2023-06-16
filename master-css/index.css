@@ -1,0 +1,51 @@
+body{
+    overflow-x: hidden;
+}
+form .form-floating input,
+#search{
+    background-color: black !important;
+    color: white !important;
+}
+
+form .form-floating input:focus,
+#search:focus{
+    color: white !important;
+    box-shadow: 0 0 0 ;
+    transform: scale(102%);
+    -webkit-transform: scale(102%);
+    -moz-transform: scale(102%);
+    -ms-transform: scale(102%);
+    -o-transform: scale(102%);
+}
+
+#total::before{
+    content: "Total: ";
+}
+
+#submit,
+.btn{
+    background-color: #421d92;
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.btn:hover{
+    background-color: #421d92;
+}
+
+#update{
+    background-color: #f0ad4e;
+}
+
+#delete{
+    background-color: #d9534f;
+}
+
+#confirmDeleteAll{
+    background-color: #d9534f;
+}
+
+#cancelDelteAll{
+    background-color: #f0ad4e;
+}

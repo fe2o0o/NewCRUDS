@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master-css/bootstrap.min.css">
+    <link rel="stylesheet" href="master-css/index.css">
+    <title>CRUDS-SYSTEM</title>
+</head>
+<body class="">
+    
+    <section class="bg-dark  text-white">
+        <div class="container">
+            <div class="title text-center py-4">
+                <h1>CRUDS</h1>
+                <p class="fs-5 mt-3">CREATE READ UPDATE DELETE SEARCH</p>
+            </div>
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control  bg-black border-0" id="productName" placeholder=" ">
+                    <label for="productName" class="bg-transparent">Product Name</label>
+                </div>
+                <div class="prices d-flex align-items-center mb-3 justify-content-between flex-wrap ">
+                    <div class="form-floating">
+                        <input type="number"  class="form-control border-0" id="price" placeholder=" ">
+                        <label for="price">Price</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control border-0" id="taxes" placeholder=" ">
+                        <label for="taxes">taxes</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control border-0 shadow-none" id="adds" placeholder=" ">
+                        <label for="adds">adds</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control border-0 shadow-none" id="discount" placeholder=" ">
+                        <label for="discount">discount</label>
+                    </div>
+                    <small id="total" class="bg-danger fs-5 ms-2 p-2 rounded-2"></small>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control  bg-black border-0" id="count" placeholder=" ">
+                    <label for="count" class="bg-transparent">count</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control  bg-black border-0" id="category" placeholder=" ">
+                    <label for="category" class="bg-transparent">Category</label>
+                </div>
+                <div class="mb-3">
+                    <button id="create" type="submit"  class="btn  w-100">CREATE</button>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" onkeyup="searchProducts(this.value)" class="form-control  bg-black border-0" id="search" placeholder=" ">
+                    <label for="search" id="searchLabel" class="bg-transparent">search</label>
+                </div>
+                <div class="search-buttons d-flex mb-3 justify-content-between">
+                    <button id="searchByName" onclick="beforeSearch(this.id)"  class="btn w-25">Search By Name</button>
+                    <button id="searchByCategory" onclick="beforeSearch(this.id)" class="btn w-25">Search By Category</button>
+                </div>
+                <div class="mb-3">
+                    <button id="deleteAll" type="submit" class="btn  w-100">DELETE ALL <span id="allCount">()</span></button>
+                </div>
+            </form>
+            <table class="table table-dark text-center table-striped m-0 overflow-scroll">
+                <thead>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>PRICE</th>
+                    <th>TAXES</th>
+                    <th>ADDS</th>
+                    <th>DISCOUNT</th>
+                    <th>TOTAL</th>
+                    <th>Count</th>
+                    <th>CATEGORY</th>
+                    <th>CONTROL</th>
+                </thead>
+                <tbody id="tabelBody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="popUp" class="vh-100 d-none bg-dark position-absolute top-0 end-0 start-0 bottom-0 z-1 bg-opacity-50">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="w-50 h-255 p-5 d-flex flex-column align-items-center gap-5 bg-white">
+                <h4 class="text-center fs-3">Confirm the deletion of all products </h4>
+                <div>
+                    <button onclick="deleteAllProducts()" id="confirmDeleteAll" class="btn-danger btn">Confirm</button>
+                    <button onclick="cancelDelete()" id="cancelDelteAll" class="btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="masterJs/index.js"></script>
+</body>
+</html>
